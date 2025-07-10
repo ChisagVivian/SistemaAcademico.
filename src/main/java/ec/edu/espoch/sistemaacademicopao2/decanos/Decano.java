@@ -41,6 +41,8 @@ public class Decano extends PersonalAcademico{
     public String toString() {
         return "Decano{" + "nivel=" + nivel + '}';
     }
+
+
     
     
 }

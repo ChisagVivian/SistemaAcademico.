@@ -11,13 +11,11 @@ package ec.edu.espoch.sistemaacademicopao2.decanos;
 public interface IDecanos {
     
     
-    public String agregarDecanos();
+    public String agregarDecanos(Decano decano);
 
     public boolean actualizarDecanos();
-
+    public void imprimirDecanos();
     public boolean eliminarDecanos();
-    
     public void guardarDecanos();
-    
     public boolean cerrarDecanos();
 }
