@@ -16,10 +16,12 @@ public class Decano extends PersonalAcademico{
     
     //CONSTRUCTORES:
 
-    public Decano(String nivel, double sueldo, String correoInstitucional, int id, String Nombre, String Correopersonal, String Cedula) {
-        super(sueldo, correoInstitucional, id, Nombre, Correopersonal, Cedula);
+    public Decano(String nivel, String deciaction, double sueldo, String correoInstitucional, int id, String Nombre, String Correopersonal, String Cedula) {
+        super(deciaction, sueldo, correoInstitucional, id, Nombre, Correopersonal, Cedula);
         this.nivel = nivel;
     }
+
+
     
     
     //SETTER AND GETTER:

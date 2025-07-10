@@ -16,11 +16,12 @@ public class Profesor extends PersonalAcademico {
     
     //CONSTRUCTORES.........
 
-    public Profesor(Escalafon escalfon, double sueldo, String correoInstitucional, int id, String Nombre, String Correopersonal, String Cedula) {
-        super(sueldo, correoInstitucional, id, Nombre, Correopersonal, Cedula);
+    public Profesor(Escalafon escalfon, String deciaction, double sueldo, String correoInstitucional, int id, String Nombre, String Correopersonal, String Cedula) {
+        super(deciaction, sueldo, correoInstitucional, id, Nombre, Correopersonal, Cedula);
         this.escalfon = escalfon;
     }
-    
+
+
     
     //setter and getter....
 
