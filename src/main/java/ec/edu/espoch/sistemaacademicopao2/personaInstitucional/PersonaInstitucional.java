@@ -21,7 +21,7 @@ public class PersonaInstitucional extends Persona{
 
     @Override
     public String toString() {
-        return "PersonaInstitucional{" + "correoInstitucional=" + correoInstitucional + '}';
+        return "PersonaInstitucional{" + "correoInstitucional=" + correoInstitucional +  super.toString()+'}';
     }
 
  

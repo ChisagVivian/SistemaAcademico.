@@ -27,9 +27,10 @@ public class PersonalAcademico extends Empleado {
 
     @Override
     public String toString() {
-        return "PersonalAcademico{" + '}';
+        return "PersonalAcademico{" + "deciaction=" + deciaction + super.toString()+ '}';
     }
-    
+
+
     
     
 }

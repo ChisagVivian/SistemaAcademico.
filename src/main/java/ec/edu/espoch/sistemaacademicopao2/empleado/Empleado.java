@@ -27,7 +27,7 @@ public class Empleado extends PersonaInstitucional{
 
     @Override
     public String toString() {
-        return "Empleado{" + "sueldo=" + sueldo + '}';
+        return "Empleado{" + "sueldo=" + sueldo + super.toString()+'}';
     }
     
     
