@@ -39,7 +39,7 @@ public class Decano extends PersonalAcademico{
 
     @Override
     public String toString() {
-        return "Decano{" + "nivel=" + nivel + '}';
+        return "Decano{" + "nivel=" + nivel + super.toString()+ '}';
     }
 
 

@@ -35,7 +35,7 @@ public class Trabajador extends Empleado {
 
     @Override
     public String toString() {
-        return "Trabajador{" + "gremio=" + gremio + '}';
+        return "Trabajador{" + "gremio=" + gremio + super.toString()+'}';
     }
     
     
