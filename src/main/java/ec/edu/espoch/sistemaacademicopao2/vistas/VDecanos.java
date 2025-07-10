@@ -24,7 +24,7 @@ public class VDecanos extends javax.swing.JFrame {
         initComponents();
         this.controladorDecano = new ControladorDecano();
         modeloTabla = new DefaultTableModel(new String[]{
-            "ID", "Nombre", "Cédula", "Correo Inst.", "Correo Pers.", "Nivel Je", "Sueldo"
+            "ID", "Nombre", "Cédula", "Correo Inst.", "Correo Pers.","Nivel", "Sueldo"
         }, 0);
 
         jTableDecano.setModel(modeloTabla);

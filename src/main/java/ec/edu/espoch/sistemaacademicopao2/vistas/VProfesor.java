@@ -4,17 +4,37 @@
  */
 package ec.edu.espoch.sistemaacademicopao2.vistas;
 
-/**
- *
- * @author Usuario
- */
+import ec.edu.espoch.sistemaacademicopao2.controlador.ControladorProfesor;
+import ec.edu.espoch.sistemaacademicopao2.profesores.Profesor;
+import javax.swing.JTable;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.event.ListSelectionListener;
 public class VProfesor extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VProfesor
-     */
+    private ControladorProfesor controlador;
+    private DefaultTableModel modeloTabla;
     public VProfesor() {
         initComponents();
+       this.controlador = new ControladorProfesor();
+        modeloTabla = new DefaultTableModel(new String[]{
+            "ID", "Nombre", "Cédula", "Correo Inst.", "Correo Pers.", "Nivel Je", "Sueldo"
+        }, 0);
+        
+         jTableProfesor.setModel(modeloTabla);
+        jTableProfesor.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) { 
+                if (!e.getValueIsAdjusting()) {
+                    cargarDecanoSeleccionado();
+                }
+            }
+
+            private void cargarDecanoSeleccionado() {
+                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+        });
+
     }
 
     /**
@@ -44,7 +64,7 @@ public class VProfesor extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableProfesor = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,7 +96,7 @@ public class VProfesor extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableProfesor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -87,7 +107,7 @@ public class VProfesor extends javax.swing.JFrame {
                 "ID", "NOMBRE", "CEDULA", "CORREO PERSONAL", "CORREO iNSTITUCIONAL", "SUELDO"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTableProfesor);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -185,40 +205,49 @@ public class VProfesor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VProfesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VProfesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VProfesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VProfesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VProfesor().setVisible(true);
-            }
-        });
+    
+    
+        public String getId(){
+        return jTextField1.getText();
     }
+    public String getNivel() {
+        return jTextField2.getText();
+    }
+    public String getNombre() {
+        return jTextField3.getText();
+    }
+    public String getCedula() {
+        return jTextField4.getText();
+    }
+    public String getCorreoPersonal() {
+        return jTextField5.getText();
+    }
+    public String getCorreoInstitucional() {
+        return jTextField6.getText();
+    }
+
+    public JTable getTabla() {
+        return jTableProfesor;
+    }
+    
+    //setter
+    
+    public void setNivel(String nivel){
+        jTextField2.setText(nivel);
+    }
+    public void setNombre(String nombre){
+        jTextField3.setText(nombre);
+    }
+    public void setCedula(String Cedula){
+        jTextField4.setText(Cedula);
+    }
+    public void setCorreoPersonal(String CorreoPersonal){
+        jTextField5.setText(CorreoPersonal);
+    }
+    public void setCorreoInstitucional(String CorreoInstitucional){
+          jTextField6.setText(CorreoInstitucional);
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnV_Actualizar;
@@ -233,7 +262,7 @@ public class VProfesor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLblV_Profesores;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableProfesor;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;

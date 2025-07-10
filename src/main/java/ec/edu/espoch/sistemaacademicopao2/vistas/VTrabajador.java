@@ -4,18 +4,40 @@
  */
 package ec.edu.espoch.sistemaacademicopao2.vistas;
 
-/**
- *
- * @author Usuario
- */
+import ec.edu.espoch.sistemaacademicopao2.controlador.ControladorTrabajador;
+import ec.edu.espoch.sistemaacademicopao2.trabajadores.Trabajador;
+import javax.swing.JTable;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.event.ListSelectionListener;
+
 public class VTrabajador extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VTrabajador
-     */
+    private ControladorTrabajador controlador;
+    private DefaultTableModel modeloTabla;
     public VTrabajador() {
         initComponents();
+        this.controlador = new ControladorTrabajador();
+        modeloTabla = new DefaultTableModel(new String[]{
+            "ID", "Nombre", "Cédula", "Correo Inst.", "Correo Pers.", "Nivel Je", "Sueldo"
+        }, 0);
+        
+        jTableTrabajador.setModel(modeloTabla);
+        jTableTrabajador.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) { 
+                if (!e.getValueIsAdjusting()) {
+                    cargarDecanoSeleccionado();
+                }
+            }
+
+            private void cargarDecanoSeleccionado() {
+                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+        });
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -48,7 +70,7 @@ public class VTrabajador extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTableTrabajador = new javax.swing.JTable();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -95,7 +117,7 @@ public class VTrabajador extends javax.swing.JFrame {
             }
         });
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTableTrabajador.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -106,7 +128,7 @@ public class VTrabajador extends javax.swing.JFrame {
                 "ID", "NOMBRE", "CEDULA", "CORREO PARSONAL", "CORREO INSTITUCIONAL", "GREMIO", "SUELDO"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(jTableTrabajador);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -215,40 +237,55 @@ public class VTrabajador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VTrabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VTrabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VTrabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VTrabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VTrabajador().setVisible(true);
-            }
-        });
+   
+    
+    
+    public String getId(){
+        return jTextField1.getText();
     }
+    public String getGremio() {
+        return jTextField2.getText();
+    }
+    public String getNombre() {
+        return jTextField3.getText();
+    }
+    public String getCedula() {
+        return jTextField4.getText();
+    }
+    public String getCorreoPersonal() {
+        return jTextField5.getText();
+    }
+    public String getCorreoInstitucional() {
+        return jTextField6.getText();
+    }
+    public String getSueldo(){
+        return jTextField7.getText();
+    }
+    public JTable getTabla() {
+        return jTableTrabajador;
+    }
+    
+    //setter
+    
+    public void setGremio(String gremio){
+        jTextField2.setText(gremio);
+    }
+    public void setNombre(String nombre){
+        jTextField3.setText(nombre);
+    }
+    public void setCedula(String Cedula){
+        jTextField4.setText(Cedula);
+    }
+    public void setCorreoPersonal(String CorreoPersonal){
+        jTextField5.setText(CorreoPersonal);
+    }
+    public void setCorreoInstitucional(String CorreoInstitucional){
+          jTextField6.setText(CorreoInstitucional);
+    }
+    public void setSueldo(String Sueldo){
+          jTextField7.setText(Sueldo);
+    }
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnV_Actualizar;
@@ -266,7 +303,7 @@ public class VTrabajador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTableTrabajador;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
