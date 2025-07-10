@@ -15,6 +15,42 @@ public class Persona {
         this.Correopersonal = Correopersonal;
         this.Cedula = Cedula;
     }
+    
+    //setther and getter........
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public String getCorreopersonal() {
+        return Correopersonal;
+    }
+
+    public void setCorreopersonal(String Correopersonal) {
+        this.Correopersonal = Correopersonal;
+    }
+
+    public String getCedula() {
+        return Cedula;
+    }
+
+    public void setCedula(String Cedula) {
+        this.Cedula = Cedula;
+    }
+    
+    
 
     @Override
     public String toString() {
