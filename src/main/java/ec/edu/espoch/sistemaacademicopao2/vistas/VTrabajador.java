@@ -17,7 +17,7 @@ public class VTrabajador extends javax.swing.JFrame {
     private DefaultTableModel modeloTabla;
     public VTrabajador() {
         initComponents();
-        this.controlador = new ControladorTrabajador();
+        controlador = new ControladorTrabajador(this);
         modeloTabla = new DefaultTableModel(new String[]{
             "ID", "Nombre", "Cédula", "Correo Inst.", "Correo Pers.", "Nivel Je", "Sueldo"
         }, 0);

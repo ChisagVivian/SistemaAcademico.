@@ -16,7 +16,7 @@ public class VProfesor extends javax.swing.JFrame {
     private DefaultTableModel modeloTabla;
     public VProfesor() {
         initComponents();
-       this.controlador = new ControladorProfesor();
+       controlador = new ControladorProfesor(this);
         modeloTabla = new DefaultTableModel(new String[]{
             "ID", "Nombre", "Cédula", "Correo Inst.", "Correo Pers.", "Nivel Je", "Sueldo"
         }, 0);

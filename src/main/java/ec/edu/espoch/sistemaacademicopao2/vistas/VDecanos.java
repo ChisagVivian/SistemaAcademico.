@@ -22,7 +22,7 @@ public class VDecanos extends javax.swing.JFrame {
 
     public VDecanos() {
         initComponents();
-        this.controladorDecano = new ControladorDecano();
+        controladorDecano = new ControladorDecano(this);
         modeloTabla = new DefaultTableModel(new String[]{
             "ID", "Nombre", "Cédula", "Correo Inst.", "Correo Pers.","Nivel", "Sueldo"
         }, 0);
