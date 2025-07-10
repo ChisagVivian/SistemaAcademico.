@@ -8,108 +8,63 @@ package ec.edu.espoch.sistemaacademicopao2.decanos;
 
 public class Decanos implements IDecanos {
 
-    private Decano[] decanos;
+private final Decano[] decanos;
     private int totalDecanos;
 
+
     public Decanos(int dimension) {
+
         decanos = new Decano[dimension];
-       totalDecanos = 0;
-        
+        totalDecanos = 0;
     }
-    
-    public String agregarDecanos( Decano decano){
- 
-        if(totalDecanos == decanos.length){
-           return "Error";
-         }else{
-          decanos[totalDecanos]= decano;
-          totalDecanos = totalDecanos + 1;
-           return "Decano Agregado correctamente"; 
-         }
+
+    @Override
+    public String agregarDecanos(Decano decano) {
+        if (totalDecanos == decanos.length) {
+            return "Error";
+        } else {
+            decanos[totalDecanos] = decano;
+            totalDecanos = totalDecanos + 1;
+            return "Agregado con exito estudiante";
+        }
     }
-    
+
+@Override
     public void imprimirDecanos(){
-        
-        
-       for (int i = 0; i < totalDecanos ; i++) {
-            System.out.println("    DATOS    ");
-            System.out.println("nivel" + decanos[i].getNivel());
-            System.out.println("Nombre" +decanos[i].toString());
-
+        for (int i = 0; i < totalDecanos; i++) {
+            System.out.println("Nivel jerarquico "+decanos[i].getNivel());
+            System.out.println("Nombre "+decanos[i].getNombre());
+            System.out.println("Correo personal "+decanos[i].getCorreopersonal());
         }
-        
     }
 
-    public boolean actualizarDecanos(){
-   return true;
-        
+
+    public boolean actualizarDecanos(int i, Decano decano) {
+         decanos[i]= decano;
+        return false;
     }
 
-    public boolean eliminarDecanos(){
-        
-        return true;
-        
-    }
 
-    public void guardarDecanos(){
-         
+    public boolean eliminarDecanos(int i, Decano decano) {
+       decanos[i]= decano;
+       return false;
     }
+    
+    
 
-    public boolean cerrarDecanos(){
-        
-        return true;
+    @Override
+    public void guardarDecanos() {
+        System.out.println("lista de estudiantes: ");
+         for (int i = 0; i < totalDecanos; i++) {
+             System.out.println(decanos[i]);
+    }
+    }
+   
+ 
+@Override
+    public void cerrarDecanos(){
+          
+        System.out.println("Proceso finalizado. recursos liberados");
     }
 
 }
- /*
- private final Estudiante[]estudiantes;
- private int totalEstudiantes;
-
-//ponre las partes iniciales del objeto.
-    public Estudiantes(int dimension) {
-        
-        estudiantes = new Estudiante[dimension];
-        totalEstudiantes= 0;
-    }
- 
- 
- @Override
-    public boolean agregarPersona( Estudiante estudiante) {
-        
-        if(totalEstudiantes == estudiantes.length){
-           return false;
-         }else{
-          estudiantes[totalEstudiantes]= estudiante;
-          totalEstudiantes = totalEstudiantes + 1;
-           return true; 
-         }
-    }
-
-
-//lo que esta adentro del metodo con parentesis(son argumentos dentro del metodo.)
-    // ejemplo:
-    //public void imprimirEstudiantes(Estudiante[] estudiantes)
- @Override
-    public void imprimirEstudiantes() {
-
-       for (int i = 0; i < totalEstudiantes ; i++) {
-
-            System.out.println("nombre" + estudiantes[i].getNombre());
-            System.out.println("Edad" + estudiantes[i].getEdad());
-            System.out.println("direccion" + estudiantes[i].getDireccion());
-        }
-    }
-    
- @Override
-    public boolean actualizarEstudiantes(int i, Estudiante estudiante){
-        estudiantes [i] = estudiante;
-        return true;
-    }
-    
-    public boolean eliminarEstudiantes(){
-        return true;
-    }
-
-
-}
-*/

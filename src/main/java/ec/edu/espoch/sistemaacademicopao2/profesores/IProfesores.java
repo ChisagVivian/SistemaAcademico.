@@ -10,14 +10,11 @@ package ec.edu.espoch.sistemaacademicopao2.profesores;
  */
 public interface IProfesores {
 
-    public String agregarProfesores();
-
-    public boolean actualizarProfesores();
-
-    public boolean eliminarProfesores();
-
-    public void guardarProfesores();
-
-    public boolean cerrarProfesores();
+    public String agregarProfesor(Profesor profesor);
+    public boolean actualizarProfesor(int i,Profesor profesor);
+    public boolean eliminarProfesor(int i, Profesor profesor);
+    public void imprimirProfesor();
+    public void guardarProfesor();
+    public void cerrarProfesor();
 
 }

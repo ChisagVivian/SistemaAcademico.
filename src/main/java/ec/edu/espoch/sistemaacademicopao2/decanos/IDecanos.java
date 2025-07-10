@@ -12,10 +12,9 @@ public interface IDecanos {
     
     
     public String agregarDecanos(Decano decano);
-
-    public boolean actualizarDecanos();
+    public boolean actualizarDecanos(int i, Decano decano);
     public void imprimirDecanos();
-    public boolean eliminarDecanos();
+    public boolean eliminarDecanos(int i, Decano decano);
     public void guardarDecanos();
-    public boolean cerrarDecanos();
+    public void cerrarDecanos();
 }

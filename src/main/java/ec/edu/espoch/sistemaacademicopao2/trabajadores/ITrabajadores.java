@@ -4,20 +4,14 @@
  */
 package ec.edu.espoch.sistemaacademicopao2.trabajadores;
 
-/**
- *
- * @author Usuario
- */
+
 public interface ITrabajadores {
 
-    public String agregarTrabajador();
-
-    public boolean actualizarTrabajador();
-
-    public boolean eliminarTrabajador();
-
-    public void guardarTrabajador();
-
-    public boolean cerrarTrabajador();
+    public String agregarTrabajadores(Trabajador trabajador);
+    public boolean actualizarTrabajadores(int i,Trabajador trabajador);
+    public boolean eliminarTrabajadores(int i,Trabajador trabajador);
+    public void imprimirTrabajador();
+    public void guardarTrabajadores();
+    public void cerrarTrabajadores();
 
 }
