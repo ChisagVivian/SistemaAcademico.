@@ -26,6 +26,12 @@ public class ControladorProfesor {
     public void agregarProfesores() {
         try {
             String nivel = vista.getNivel();
+            String ID = vista.getId();
+            String nombre = vista.getNombre();
+            String Cedula =vista.getCedula();
+            String CorreoPersonal =vista.getCorreoPersonal();
+            String CorreoInstitucional = vista.getCorreoInstitucional();
+
         } catch (Exception e) {
         }
     }

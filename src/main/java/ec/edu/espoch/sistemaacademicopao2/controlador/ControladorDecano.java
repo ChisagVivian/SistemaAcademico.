@@ -13,20 +13,41 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
 
 public class ControladorDecano {
-    
-  private VDecanos vista;
-  private IDecanos decanos;
+
+    private VDecanos vista;
+    private IDecanos decanos;
 
     public ControladorDecano(VDecanos vista) {
         this.vista = vista;
-        this.decanos = new Decanos (10);
+        this.decanos = new Decanos(10);
     }
-    
-    public void agregarDecano(){
+
+    public void agregarDecano() {
         try {
             String nivel = vista.getNivel();
+            String ID = vista.getId();
+            String nombre = vista.getNombre();
+            String Cedula =vista.getCedula();
+            String CorreoPersonal =vista.getCorreoPersonal();
+            String CorreoInstitucional = vista.getCorreoInstitucional();
+            String Sueldo =vista.getSueldo ();
+            boolean respuesta;
+            respuesta = IDecanos.agregarDecanos(nivel,ID, nombre,Cedula,CorreoPersonal, CorreoInstitucional,Sueldo);
+            
+            if (respuesta) {
+                System.out.println("Decano Agregado correctamente");
+            }else{
+                System.out.println("No se pudo agregar correctamente el ID.decano");
+            }
         } catch (Exception e) {
+           
+            System.out.println("Error");
         }
-    }
+        
+        }
     
-}
+    private void ActualizarTabla(){
+        DefaultTableModel modeloTabla = VDecanos.;
+    }
+
+    }

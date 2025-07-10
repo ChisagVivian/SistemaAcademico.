@@ -9,6 +9,8 @@ package ec.edu.espoch.sistemaacademicopao2.decanos;
  * @author Usuario
  */
 public interface IDecanos {
+
+    public static boolean agregarDecanos(String nivel, String ID, String nombre, String Cedula, String CorreoPersonal, String CorreoInstitucional, String Sueldo);
     
     
     public String agregarDecanos(Decano decano);

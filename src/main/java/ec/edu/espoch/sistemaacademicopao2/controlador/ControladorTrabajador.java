@@ -24,6 +24,12 @@ public class ControladorTrabajador {
     public void agregarTravajador(){
         try {
             String gremio = vista.getGremio();
+            String ID = vista.getId();
+            String nombre = vista.getNombre();
+            String Cedula =vista.getCedula();
+            String CorreoPersonal =vista.getCorreoPersonal();
+            String CorreoInstitucional = vista.getCorreoInstitucional();
+            String Sueldo =vista.getSueldo ();
             
         } catch (Exception e) {
         }
