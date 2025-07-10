@@ -20,6 +20,8 @@ public class Empleado extends PersonaInstitucional{
         super(correoInstitucional, id, Nombre, Correopersonal, Cedula);
         this.sueldo = sueldo;
     }
+
+
     
     //pilimorfimos dinamico que suscribe de la clase:
 

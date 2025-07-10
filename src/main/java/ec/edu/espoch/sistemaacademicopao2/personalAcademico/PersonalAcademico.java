@@ -12,10 +12,15 @@ import ec.edu.espoch.sistemaacademicopao2.empleado.Empleado;
  */
 public class PersonalAcademico extends Empleado {
 
+    private String deciaction;
+    
     //Constructores.................
-    public PersonalAcademico(double sueldo, String correoInstitucional, int id, String Nombre, String Correopersonal, String Cedula) {
+
+    public PersonalAcademico(String deciaction, double sueldo, String correoInstitucional, int id, String Nombre, String Correopersonal, String Cedula) {
         super(sueldo, correoInstitucional, id, Nombre, Correopersonal, Cedula);
+        this.deciaction = deciaction;
     }
+
     
     
     //pilimorfismo dinamico..........
