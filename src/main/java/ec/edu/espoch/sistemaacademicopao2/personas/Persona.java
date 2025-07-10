@@ -21,6 +21,4 @@ public class Persona {
         return "Persona{" + "id=" + id + ", Nombre=" + Nombre + ", Correopersonal=" + Correopersonal + ", Cedula=" + Cedula + '}';
     }
     
-    
-    
 }

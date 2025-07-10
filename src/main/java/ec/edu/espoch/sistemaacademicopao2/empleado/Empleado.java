@@ -4,10 +4,30 @@
  */
 package ec.edu.espoch.sistemaacademicopao2.empleado;
 
+import ec.edu.espoch.sistemaacademicopao2.personaInstitucional.PersonaInstitucional;
+
 /**
  *
  * @author Usuario
  */
-public class Empleado {
+public class Empleado extends PersonaInstitucional{
+    
+    private double sueldo;
+    
+    //constructores............
+
+    public Empleado(double sueldo, String correoInstitucional, int id, String Nombre, String Correopersonal, String Cedula) {
+        super(correoInstitucional, id, Nombre, Correopersonal, Cedula);
+        this.sueldo = sueldo;
+    }
+    
+    //pilimorfimos dinamico que suscribe de la clase:
+
+    @Override
+    public String toString() {
+        return "Empleado{" + "sueldo=" + sueldo + '}';
+    }
+    
+    
     
 }
